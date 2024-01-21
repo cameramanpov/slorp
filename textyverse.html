@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextyVerse Builder</title>
+    <!-- Styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #htmlResult {
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>TextyVerse Builder</h1>
+
+    <label for="textInput">Entrez votre texte avec la syntaxe spéciale :</label>
+    <textarea id="textInput" placeholder="Exemple: [h]Titre[/h] [lien=https://frappaverse.com]Frappaverse[/lien]"></textarea>
+
+    <button onclick="convertToHTML()">Convertir en HTML et Sauvegarder</button>
+
+    <div id="htmlResult"></div>
+
+    <script>
+        function convertToHTML() {
+            // Récupérer le texte saisi par l'utilisateur
+            const userInput = document.getElementById('textInput').value;
+
+            // Convertir la syntaxe spéciale en HTML
+            const htmlResult = processSyntax(userInput);
+
+            // Afficher le code HTML généré
+            document.getElementById('htmlResult').innerHTML = `<pre>${htmlResult}</pre>`;
+
+            // Créer un objet Blob contenant le code HTML
+            const blob = new Blob([htmlResult], { type: 'text/html' });
+
+            // Créer un objet URL à partir du Blob
+            const url = URL.createObjectURL(blob);
+
+            // Générer le nom du fichier avec la date et l'heure
+            const timestamp = new Date().toISOString().replace(/[-:T.]/g, '');
+            const filename = `textyverse_${timestamp}.html`;
+
+            // Créer un élément <a> pour déclencher le téléchargement
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+
+            // Ajouter le lien à la page
+            document.body.appendChild(link);
+
+            // Simuler un clic sur le lien pour déclencher le téléchargement
+            link.click();
+
+            // Supprimer le lien de la page
+            document.body.removeChild(link);
+        }
+
+        function processSyntax(text) {
+            // Remplacer les balises d'en-tête [h]...[/h]
+            text = text.replace(/\[h\](.*?)\[\/h\]/g, '<h7>$1</h7>');
+
+            // Remplacer les balises de lien [lien=URL]texte[/lien]
+            text = text.replace(/\[lien=(.*?)\](.*?)\[\/lien\]/g, '<a href="$1">$2</a>');
+
+            return text;
+        }
+    </script>
+
+</body>
+</html>

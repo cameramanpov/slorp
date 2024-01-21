@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slorpy - Éditeur de Texte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        div[contentEditable] {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 300px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Slorpy - Éditeur de Texte</h1>
+
+    <div contentEditable="true" id="editor" oninput="updateButtons()">
+        <p>Commencez à écrire ici...</p>
+    </div>
+
+    <br>
+
+    <button onclick="applyStyle('bold')">Gras</button>
+    <button onclick="applyStyle('italic')">Italique</button>
+    <button onclick="applyStyle('underline')">Souligner</button>
+
+    <script>
+        function applyStyle(style) {
+            const editor = document.getElementById('editor');
+            const selection = window.getSelection();
+            const range = selection.getRangeAt(0);
+
+            const span = document.createElement('span');
+            span.style[style] = span.style[style] === 'none' ? '' : 'none';
+
+            range.surroundContents(span);
+        }
+
+        function updateButtons() {
+            const buttons = document.querySelectorAll('button');
+
+            buttons.forEach(button => {
+                button.disabled = !isSelectionStyled(button.dataset.style);
+            });
+        }
+
+        function isSelectionStyled(style) {
+            const selection = window.getSelection();
+            if (selection.rangeCount > 0) {
+                const range = selection.getRangeAt(0);
+                const span = document.createElement('span');
+                span.style[style] = span.style[style] === 'none' ? '' : 'none';
+
+                return range.intersectsNode(span);
+            }
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>

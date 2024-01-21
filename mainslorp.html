@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slorp</title>
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h7 {
+            font-size: 0.5em; /* Ajustez la taille de la police selon vos besoins */
+            color: #333; /* Couleur du texte */
+            /* Ajoutez d'autres styles selon vos préférences */
+        }
+
+        h8 {
+            font-size: 0.05em;
+        }
+
+        h9 {
+            font-size: 0.001em;
+        }
+
+        h10 {
+            font-size: 0.0007em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="astuce pc logo.png" alt="Logo Slorp" width="100">
+        <h1>Slorp</h1>
+    </header>
+
+    <section>
+        <h2>Sites Slorp</h2>
+        <ul id="siteList">
+            <!-- Remplacez les URL par les noms de vos fichiers dans le même dossier -->
+            <li><a href="Untitled-en1.html" target="_blank">Astuce PC</a></li>
+            <li><a href="l'école de l'horreur.html" target="_blank">l'école de l'horreur</a></li>
+            <li><a href="frappaverse.html" target="_blank">frappaverse</a></li>
+            <li><a href="frappaverse 2.0.html" target="_blank">frappaverse 2</a></li>
+            <li><a href="textyverse.html" target="_blank">textyverse</a></li>
+            <li><a href="textyverse builder 2.html" target="_blank">textyverse 2</a></li>
+        </ul>
+
+        <br>
+        <br>
+        <ul>
+            <li><a href="easter egg slorpy.html" target="_blank"><marquee><h10>&copy;</h10></marquee></a></li>
+        </ul>
+        <br>
+        <br>
+        <marquee>&copy; 2024 Slorp. Tous droits réservés.</marquee>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Récupérer la liste de liens
+            const siteList = document.getElementById('siteList');
+
+            // Ajouter un écouteur de clic aux liens
+            siteList.addEventListener('click', function (event) {
+                // Empêcher le comportement par défaut du lien
+                event.preventDefault();
+
+                // Vérifier si l'élément cliqué est un lien
+                if (event.target.tagName === 'A') {
+                    // Recharger la page avec le nouvel URL
+                    window.location.href = event.target.href;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

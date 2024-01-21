@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frappaverse Code Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Frappaverse Code Generator</h1>
+
+    <label for="htmlCode">Entrez votre code HTML :</label>
+    <textarea id="htmlCode" placeholder="Entrez votre code HTML ici"></textarea>
+
+    <button onclick="generateHTML()">Générer et Télécharger</button>
+
+    <script>
+        function generateHTML() {
+            // Récupérer le code HTML saisi par l'utilisateur
+            const userHTML = document.getElementById('htmlCode').value;
+
+            // Créer un objet Blob contenant le code HTML
+            const blob = new Blob([userHTML], { type: 'text/html' });
+
+            // Créer un objet URL à partir du Blob
+            const url = URL.createObjectURL(blob);
+
+            // Créer un élément <a> pour déclencher le téléchargement
+            const link = document.createElement('a');
+            link.href = url;
+
+            // Générer le nom du fichier avec la date et l'heure
+            const timestamp = new Date().toISOString().replace(/[-:T.]/g, '');
+            const filename = `fichier_html_du_${timestamp}.html`;
+
+            // Définir le nom du fichier téléchargé
+            link.download = filename;
+
+            // Ajouter le lien à la page
+            document.body.appendChild(link);
+
+            // Simuler un clic sur le lien pour déclencher le téléchargement
+            link.click();
+
+            // Supprimer le lien de la page
+            document.body.removeChild(link);
+        }
+    </script>
+
+    <section>
+        <marquee><h3>&copy; slorp. TOUT DROITS réservés.</h3></marquee>
+    </section>
+
+</body>
+</html>

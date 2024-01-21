@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextyVerse Builder</title>
+    <!-- Styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #htmlResult {
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+
+        .scrolling-text {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .scrolling-text h3 {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .reference {
+            margin-bottom: 20px;
+        }
+
+        .reference p {
+            margin: 0;
+            padding: 5px;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>TextyVerse Builder</h1>
+
+    <div class="reference">
+        <p><strong>Syntaxe correspondante aux balises HTML :</strong></p>
+        <ul>
+            <li><strong>[h]</strong>Titre<strong>[/h]</strong> => &lt;h7&gt;Titre&lt;/h7&gt;</li>
+            <li><strong>[lien=URL]</strong>Texte du lien<strong>[/lien]</strong> => &lt;a href="URL"&gt;Texte du lien&lt;/a&gt;</li>
+            <li><strong>[gras]</strong>Texte en gras<strong>[/gras]</strong> => &lt;strong&gt;Texte en gras&lt;/strong&gt;</li>
+            <li><strong>[italique]</strong>Texte en italique<strong>[/italique]</strong> => &lt;em&gt;Texte en italique&lt;/em&gt;</li>
+            <li><strong>[defilement]</strong>Texte défilant<strong>[/defilement]</strong> => &lt;div class="scrolling-text"&gt;&lt;h3&gt;Texte défilant&lt;/h3&gt;&lt;/div&gt;</li>
+        </ul>
+    </div>
+
+    <label for="textInput">Entrez votre texte avec la syntaxe spéciale :</label>
+    <textarea id="textInput"
+        placeholder="Exemple: [h]Titre[/h] [lien=https://frappaverse.com]Frappaverse[/lien] [gras]Texte en gras[/gras] [italique]Texte en italique[/italique] [defilement]Texte défilant[/defilement] [slorp]"></textarea>
+
+    <button onclick="convertToHTML()">Convertir en HTML et Sauvegarder</button>
+
+    <div id="htmlResult"></div>
+
+    <script>
+        function convertToHTML() {
+            // Récupérer le texte saisi par l'utilisateur
+            const userInput = document.getElementById('textInput').value;
+
+            // Vérifier si le texte contient la balise [slorp]
+            if (userInput.includes('[slorp]')) {
+                // Ouvrir la vidéo dans une nouvelle fenêtre du navigateur
+                window.open('slorpy_easter_egg.mp4', '_blank');
+
+                // Fermer la page actuelle
+                window.close();
+                return;
+            }
+
+            // Convertir la syntaxe spéciale en HTML
+            const htmlResult = processSyntax(userInput);
+
+            // Afficher le code HTML généré
+            document.getElementById('htmlResult').innerHTML = `<pre>${htmlResult}</pre>`;
+
+            // Créer un objet Blob contenant le code HTML
+            const blob = new Blob([htmlResult], { type: 'text/html' });
+
+            // Créer un objet URL à partir du Blob
+            const url = URL.createObjectURL(blob);
+
+            // Générer le nom du fichier avec la date et l'heure
+            const timestamp = new Date().toISOString().replace(/[-:T.]/g, '');
+            const filename = `textyverse_${timestamp}.html`;
+
+            // Créer un élément <a> pour déclencher le téléchargement
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+
+            // Ajouter le lien à la page
+            document.body.appendChild(link);
+
+            // Simuler un clic sur le lien pour déclencher le téléchargement
+            link.click();
+
+            // Supprimer le lien de la page
+            document.body.removeChild(link);
+        }
+
+        function processSyntax(text) {
+            // Remplacer les balises d'en-tête [h]...[/h]
+            text = text.replace(/\[h\](.*?)\[\/h\]/g, '<h7>$1</h7>');
+
+            // Remplacer les balises de lien [lien=URL]texte[/lien]
+            text = text.replace(/\[lien=(.*?)\](.*?)\[\/lien\]/g, '<a href="$1">$2</a>');
+
+            // Remplacer les balises de texte en gras [gras]...[/gras]
+            text = text.replace(/\[gras\](.*?)\[\/gras\]/g, '<strong>$1</strong>');
+
+            // Remplacer les balises de texte en italique [italique]...[/italique]
+            text = text.replace(/\[italique\](.*?)\[\/italique\]/g, '<em>$1</em>');
+
+            // Remplacer les balises de texte défilant [defilement]...[/defilement]
+            text = text.replace(/\[defilement\](.*?)\[\/defilement\]/g, '<div class="scrolling-text"><h3>$1</h3></div>');
+
+            return text;
+        }
+    </script>
+
+</body>
+</html>
