@@ -18,7 +18,7 @@ function checkCredentials() {
     );
 
     if (isAuthorized) {
-        window.location.href = ""; // Rediriger vers la page d'accueil autorisée
+        window.location.href = "ecoledelhorreur.html"; // Rediriger vers la page d'accueil autorisée
     } else {
         alert("Accès non autorisé. Veuillez vérifier vos informations.");
     }
