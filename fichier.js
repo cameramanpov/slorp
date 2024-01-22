@@ -1,5 +1,8 @@
 const authorizedUsers = [
     { nom: "Millotte", prenom: "Lucas", mdp: "Gidi5322" }
+    { nom: "Millotte", prenom: "lucas", mdp: "Gidi5322" }
+    { nom: "millotte", prenom: "Lucas", mdp: "Gidi5322" }
+    { nom: "millotte", prenom: "lucas", mdp: "Gidi5322" }
 ];
 
 function showLoginForm() {
