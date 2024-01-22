@@ -1,25 +1,16 @@
-const authorizedUsers = [
-    { nom: "hi", prenom: "bitch", mdp: "pas" },
-    { nom: "utilisateur2", prenom: "prenom2", mdp: "motdepasse2" }
-];
+document.addEventListener('DOMContentLoaded', function () {
+    // Récupérer la liste de liens
+    const siteList = document.getElementById('siteList');
 
-function showLoginForm() {
-    const loginForm = document.getElementById("loginForm");
-    loginForm.style.display = "block";
-}
+    // Ajouter un écouteur de clic aux liens
+    siteList.addEventListener('click', function (event) {
+        // Empêcher le comportement par défaut du lien
+        event.preventDefault();
 
-function checkCredentials() {
-    const nomInput = document.getElementById("nom").value;
-    const prenomInput = document.getElementById("prenom").value;
-    const mdpInput = document.getElementById("mdp").value;
-
-    const isAuthorized = authorizedUsers.some(user =>
-        user.nom === nomInput && user.prenom === prenomInput && user.mdp === mdpInput
-    );
-
-    if (isAuthorized) {
-        window.location.href = "accueil.html"; // Rediriger vers la page d'accueil autorisée
-    } else {
-        alert("Accès non autorisé. Veuillez vérifier vos informations.");
-    }
-}
+        // Vérifier si l'élément cliqué est un lien
+        if (event.target.tagName === 'A') {
+            // Recharger la page avec le nouvel URL
+            window.location.href = event.target.href;
+        }
+    });
+});

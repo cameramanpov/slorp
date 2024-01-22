@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'Accueil</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Slorp</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenue sur mon site</h1>
-        <button onclick="showLoginForm()">Accéder au site</button>
-        <div id="loginForm" style="display: none;">
-            <form onsubmit="checkCredentials(); return false;">
-                <label for="nom">Nom:</label>
-                <input type="text" id="nom" required><br>
-                <label for="prenom">Prénom:</label>
-                <input type="text" id="prenom" required><br>
-                <label for="mdp">Mot de passe:</label>
-                <input type="password" id="mdp" required><br>
-                <input type="submit" value="Se connecter">
-            </form>
-        </div>
-    </div>
 
+    <header>
+        <img src="astuce pc logo.png" alt="Logo Slorp" width="100">
+        <h1>Slorp</h1>
+    </header>
+
+    <section>
+        <h2>Sites Slorp</h2>
+        <ul id="siteList">
+            <!-- Remplacez les URL par les noms de vos fichiers dans le même dossier -->
+            <li><a href="Untitled-en1.html" target="_blank">Astuce PC</a></li>
+            <li><a href="l'école de l'horreur.html" target="_blank">l'école de l'horreur</a></li>
+            <li><a href="frappaverse.html" target="_blank">frappaverse</a></li>
+            <li><a href="frappaverse 2.0.html" target="_blank">frappaverse 2</a></li>
+            <li><a href="textyverse.html" target="_blank">textyverse</a></li>
+            <li><a href="textyverse builder 2.html" target="_blank">textyverse 2</a></li>
+            <a href="https://slorp.000webhostapp.com">Ancienne version du site</a>
+        </ul>
+
+        <br>
+        <br>
+        <ul>
+            <li><a href="easter egg slorpy.html" target="_blank"><marquee><h10>&copy;</h10></marquee></a></li>
+        </ul>
+        <br>
+        <br>
+        <marquee>&copy; 2024 Slorp. Tous droits réservés.</marquee>
+    </section>
+    
     <script src="script.js"></script>
+
 </body>
 </html>
