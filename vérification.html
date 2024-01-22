@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur mon site</h1>
+        <button onclick="showLoginForm()">Accéder au site</button>
+        <div id="loginForm" style="display: none;">
+            <form onsubmit="checkCredentials(); return false;">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" required><br>
+                <label for="prenom">Prénom:</label>
+                <input type="text" id="prenom" required><br>
+                <label for="mdp">Mot de passe:</label>
+                <input type="password" id="mdp" required><br>
+                <input type="submit" value="Se connecter">
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
