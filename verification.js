@@ -1,6 +1,5 @@
 const authorizedUsers = [
-    { nom: "hi", prenom: "bitch", mdp: "pas" },
-    { nom: "utilisateur2", prenom: "prenom2", mdp: "motdepasse2" }
+    { nom: "Millotte", prenom: "Lucas", mdp: "Gidi5322" }
 ];
 
 function showLoginForm() {
