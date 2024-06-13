@@ -1,5 +1,6 @@
 let currentUser = "";
 let userAccounts = [];
+let messages = []; // Messages will be stored here
 
 function login() {
   const username = document.getElementById("username").value;
@@ -39,6 +40,7 @@ function sendMessage() {
   const messageInput = document.getElementById("messageInput");
   if(messageInput.value) {
     const message = messageInput.value;
+    messages.push({ user: currentUser, message: message });
     const messageElement = document.createElement("p");
     messageElement.innerText = `${currentUser}: ${message}`;
     document.getElementById("chatContainer").appendChild(messageElement);
