@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site de Chat</title>
+<link rel="stylesheet" href="chat.css">
+</head>
+<body>
+<div id="loginPage">
+  <h2>Connexion</h2>
+  <input type="text" id="username" placeholder="Nom d'utilisateur">
+  <input type="password" id="password" placeholder="Mot de passe">
+  <button onclick="login()">Connexion</button>
+  <button onclick="showAccountCreate()">Créer un compte</button>
+</div>
+<div id="accountCreatePage" style="display: none;">
+  <h2>Créer un compte</h2>
+  <input type="text" id="newUsername" placeholder="Nouveau nom d'utilisateur">
+  <input type="password" id="newPassword" placeholder="Nouveau mot de passe">
+  <button onclick="createAccount()">Créer le compte</button>
+</div>
+<div id="chatPage" style="display: none;">
+  <h2>Bienvenue <span id="user"></span></h2>
+  <div id="chatContainer"></div>
+  <input type="text" id="messageInput" placeholder="Tapez un message...">
+  <button onclick="sendMessage()">Envoyer</button>
+</div>
+<script src="chat.js"></script>
+</body>
+</html>
