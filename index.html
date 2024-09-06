@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slorp</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Analytics -->
+    <link rel="stylesheet" href="loader.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-72PXWX5Y6K"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,59 +15,8 @@
     
       gtag('config', 'G-72PXWX5Y6K');
     </script>
-    <style>
-        /* Style pour le spinner */
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-        }
-
-        .spinner {
-            width: 88px;
-            height: 88px;
-            display: grid;
-            color: #09db44;
-            background: radial-gradient(farthest-side, currentColor calc(100% - 10.6px), #0000 calc(100% - 8.8px) 0);
-            -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 22.9px), #000 calc(100% - 21.1px));
-            border-radius: 50%;
-            animation: spinner-sm4bhi 1.2s infinite linear;
-        }
-
-        .spinner::before,
-        .spinner::after {
-            content: "";
-            grid-area: 1/1;
-            background: linear-gradient(currentColor 0 0) center,
-                linear-gradient(currentColor 0 0) center;
-            background-size: 100% 17.6px, 17.6px 100%;
-            background-repeat: no-repeat;
-        }
-
-        .spinner::after {
-            transform: rotate(45deg);
-        }
-
-        @keyframes spinner-sm4bhi {
-            100% {
-                transform: rotate(1turn);
-            }
-        }
-    </style>
 </head>
 <body>
-
-    <!-- Loader -->
-    <div id="loader">
-        <div class="spinner"></div>
-    </div>
 
     <header>
         <img src="astuce_pc_logo.png" alt="Logo Slorp" width="100">
@@ -75,29 +25,53 @@
 
     <section>
         <h2>Sites Slorp</h2>
-        <ul style="list-style-type:none;">
+        
+            <!-- Remplacez les URL par les noms de vos fichiers dans le même dossier --> <ul style="list-style-type:none;">
+
             <li><a href="Untitled-en1.html" target="_blank">Astuce PC</a></li>
             <li><a href="astuce_programmation.html">Astuce programmation</a></li>
             <li><a href="verification.html" target="_blank">l'école de l'horreur</a></li>
             <li><a href="frappaverse.html" target="_blank">frappaverse</a></li>
             <li><a href="textyverse.html" target="_blank">textyverse</a></li>
             <li><a href="https://www.mediafire.com/file/8j7mbkrr6sp9ies/Slorpy+écarlate+epsillon.exe/file">Télécharger Mon Navigateur</a></li>
-            <li><a href="online.html" target="_blank">Mes jeux disponible en ligne</a></li>
+            <li><a href="online.html" target="_blank">Mes jeux disponible en lign</a>e</li>
             <li><a href="chat.html">chat</a></li>
             <li><a href="https://www.mediafire.com/file/pp8949muzfdxjvv/OBSPortable.zip/file">obs Studio screen recorder</a></li>
             <li><a href="SHA256.html">SHA 256 encrypter/decrypter</a></li>
-            <li><a href="frappaverse2.0.html" target="_blank">frappaverse 2.0</a></li>
-        </ul>
-        
-        <marquee>&copy; 2024 Slorp. Tous droits réservés.</marquee>
-    </section>
+            <br>
+            <br>
+            <br>
+            <li><a href="https://www.mediafire.com/file/k4er8d0brqatwh2/Cube.zip/file">Gabasoft sans installation.zip</a></li>
+            <br><br><br><br>    
+            <li><a href="frappaverse2.0.html" target="_blank">f̶̢̛̜̹̻̗̩̮̠̱̯̪̮̼̼͍̫̣̘̣̲̲̬͕͓̼͕͍̤̽̈́͗̑͗̅̐̀̀́͒̓͊̽͂͒͒̾͗̐̑̆̉͜͝͝͠r̴̼͈̳̄̍̈̓̈́̈́̆̊͐̓̔͗̓̍́͗̈́̑̑̍̌͋̌͝͠͠a̴̢̧͉͎̣̘͇̻̪̪̝͉͙̲͋̀̓͛̏̊̇̂̓̋̂̆̓̀̓̈̾̕p̴̞̯̲̠̹̠̰͎̥̹͉̗̼̖̭̖̤̱̲̐̉̈̓̊͗̏̌̀̾͛͑̂̋̏̏̄̅͑͆̈́͆̈̕͘͘͜͜͠͠͠ͅͅͅp̴̨̧̫͙̟̺̱̘̰͈͈̯̗̼͍̬̙̝͎͉̖̺̻̯̈́́͑̅̌̉̈̊͜͜ͅa̶̛͚͖͎̫̰͈̟̗̳̥̤̖͉͕̜̩̹̯̟͚̲̯̠͎̱͈̲̠̥̅̌́̓͑͘ͅͅv̶͕̮̬͉͔̈́̈́̎̈̐̇͑̒͛́͊͋̏͝ȩ̷̧̝̩̩̮̩̻̪̩̰̖̻̗̳̙̅͊͒̇͌͒r̸̨̛̛̛̹̖̬̮͙̮͇͖̠̱̺̼̦͔̠̳͎͔̹̜̮̯̞̥͉̀̓͆̔̅͗̈́͂̏̔̀̇̋͆̽̽̎̒̃̽͆̕͜ş̸̢͔̯̘̩͎̝̺̻̗͙̫̆͌͜͜ͅe̵̢̨̧̡͔̳͎̲̭͓̠̩̳̣̣͓̩̤̬̟̩͖̼̭̰͔͗̽̌́̔͑̽̑̍̎̈́͊͋̕̕͘̚͜͝͠ͅͅ ̷̧̛͍̘̟͔̝̘͍̰͍̳̼̦̩̟̪̆̐͂̾̿̈̋̔͂̂̅̊̚͜͠͠2̵͚͓̫̱̪̝͓̞̗͙̠͎̋̓́̍̉̾̓̂͐́́͐̓͆̒͜</a></li>
 
+           <br><br><br><br><br><br><br><br><br><br>
+            <li><a href="game.html" target="_blank">M̷̡̝̝̘͍̯͚̺̣̻̻̗͖̎͌̄́̄͋̔̾̋̀́͌̈͂̌̈́͑͒͐̅͂̕̕͝͝ͅͅę̸̡̛̻͚̞̺̮̬̠̳̻̭̺͔̤͙̊͒͛͂̓͐̽̂͑̽͆̀̌͛͘͝ͅs̶̞̻̹̃̎̈́̾͋̆̾̅̀͂̌̎̆̄̒̋̊͌̓̓̔̓̎̅́̕̕͝ ̷̨̢̛͎̩̤̺̳͔͇̱͓͈̲͉͕̼̩͎͇̥͖͋̋́̎̄̐͆̊̍̀̎̃̽̑̈́̈́́̀̈̕͝͠j̸̢̨̼̘̖̼̫̱͍͉̻͚̤̩̩̗̤̤̙͔̠̠͎̬̹͚̦̫̯͑́̂͗̃͊̆̈͛͑͂̄̎̕͝͝͠ę̵̧̦̗̪̱͔̳̩͉͉̳͓̳̣͉̤͍̺̹̲̘͇̬̼̲͚̟̰͈̎̏̉̔̽͗̄̃̉̐́͒̊͗̐̎̓͛̂̚͝͝͠͠ǘ̴̢̡̦͈̝͈̭̮͍͔͎͗̓̽̋̊̅̆͂̌̓́̈́͝x̸̲̼̅́̀́̉̓̆͋̔̀̀̈́̇̅͑͗͑͋̑̐̋͐̇̀͋̑́̂̈́̚͠</a></li>
+                 <br><br><br><br><br><br><br><br><br><br>
+                 <br><br><br><br><br><br><br><br><br><br>
+                 <br><br><br><br><br><br><br><br><br><br>
+            <li><a href="textyverse_builder_2.html" target="_blank">t̴̜̖̮̯̤͔̤͈̞͍͎̫̗̠͓̺̒͗͊̓́͛̌̆̇͜͝͠e̴̢̢̬̟͇͖̤͕͈͈̋̒̄̈́̃̓͛̾́͊̅̈̆͋͌̍̀͑͋͒̃̀̚͘x̷̡̡͔̭̹̬̣̬̗͈͓̟̫̹̩̰̑͒̀͛̍̀͆̈́̉̐̆͊̈͐̀̓̔̃̀̎̉͘͝͠t̵̛̤͖͇̩͚̪̤̐́̆̐́̇̍̂̋̿̍́́̒͑̈́̉́̅̃̈̕͠͠ỹ̶͎̭͈͇͚̞̝̬̲̪͓̳͌̍̀̿̾͆̎́͑̑̓̐̈̆́̾͆̔̐͗͌͂͐̕̚̚͜͠v̸̡̤̣̝̳͇̯͕̗̰̬̮̰̬̝̤͆̒̆́͌̇͗̅̓͘̕̕͠͠ę̶͖͔̥͙̜̥̜͙̲̜͎̺͙͉̺͚̼͍̙̫͋̅͐̎̆̇̽̔̈́̐͗̍͊̏̆̓͛́͋̈́̉̓̾̕̚͜͜͜͝͝͠͠r̴̢̡̠̝͙̞̞̬̘̘͚͖̻̩̭͉̒̏̀̀̌͒͋̒͗͊͘͝s̷̢̢̨̭̯̼̹̟̜̬͖̣̫͙̦͙̺̬͙̣͔̯̻̙͛̄̅́̅́̈̚͜͜͝͝͝e̴̥͕̺̦̗̼̳̘̟͈̥͎̋̓͝͝ͅ ̵̙̪̳͙̤͇̲̬͚̜͚͕͌̈́̃̓̃͆͑̈́̓̅͝2̴̨̬̗͕̫̭͙̤̟͇̳͉̤̩̠̞̪̗͇̇̾͝ͅͅ</a></li>
+           
+            </ul>
+        
+
+        <br>
+        <br>
+        <ul style="list-style-type:none;>
+            <li><a href="eastereggslorpy.html" target="_blank"><marquee><h10>&copy;</h10></marquee></a></li>
+        </ul>
+        <br>
+        <br>
+        <marquee>&copy; 2024 Slorp. Tous droits réservés.</marquee>
+        <br>
+        <br>
+        <br>
+         <a href='http://www.freevisitorcounters.com'>at freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bcaeafd156a1a2fa77350a69a990baee3006185e'></script>
+         <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1188243/t/0"></script>
+    </section>
+    
     <script src="index.js"></script>
-    <script>
-        // Masquer le loader et afficher le contenu de la page une fois chargée
-        window.addEventListener('load', function () {
-            document.getElementById('loader').style.display = 'none';  // Cacher le loader
-        });
-    </script>
+    <script src="loader.js"></script>
+
 </body>
 </html>
